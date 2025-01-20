@@ -6,7 +6,7 @@
 	"$ld_flags": "-lgcc,-lc,-lstdc++",
 	
 	"backup": "backup",
-	"filesystem": "FILESYSTEM_PATH",
+	"filesystem": "__tmp",
 	"toolchain": "arm-none-eabi-",
 	
 	"arm7": {},
@@ -15,7 +15,9 @@
 		"build": "build"
 	},
 	
-	"pre-build": [],
+	"pre-build": [
+		"python3 gen_obj_table.py"
+	],
 	"post-build": [],
 	
 	"thread-count": 0

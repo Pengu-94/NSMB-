@@ -1,0 +1,37 @@
+// standard animations for Mario/Luigi.
+
+#define MIdle	0x00
+#define MWalkSlow	0x01
+#define MWalk	0x02
+#define MDash	0x03
+#define MDashFast	0x04
+#define MJump	0x05	
+#define MJumpFall	0x06	
+#define MJumpLand	0x07	
+#define MTripleJump_unused	0x08	
+#define MTripleJumpFall	0x09	
+#define MTripleJumpLand	0x0A	
+#define MTripleJump	0x0B	
+#define MSkid	0x0C	
+#define MSkidTurn	0x0D	
+#define MGroundPoundRoll	0x0E	
+#define MGroundPoundFall	0x0F	
+#define MGroundPoundLand	0x10	
+#define MCrouched	0x11	
+#define MThrowFireball	0x12	
+#define MSlipBumpFall	0x13	
+#define MSliding	0x14
+#define MStandUp	0x15	
+#define MSlipFall	0x16
+#define MDiveLand	0x17
+#define MDiveSlide	0x18
+#define MDiveStandUp	0x19
+#define MRollPose	0x1A	
+#define MRoll	0x1B	
+#define MCarryStart	0x1C	
+#define MCarryIdle	0x1D	
+#define MCarryWalk	0x1E	
+#define MCarryThrow	0x1F	
+#define MMegaGrow	0x20	
+#define MWalljump	0x21	
+#define MWallSlide	0x22	

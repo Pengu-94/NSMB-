@@ -12,8 +12,8 @@ symbols7.x
 /__tmp/
 
 # ROM
-NSMB.nds
-NSMB.sav
+rom.nds
+rom.sav
 
 # NCPatcher
 /backup/
