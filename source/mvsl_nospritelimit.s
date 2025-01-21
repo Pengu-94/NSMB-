@@ -1,4 +1,5 @@
 @Replaces calcFileId
+ncp_jump(0x02009394)
 nsub_02009394:
 	LDR     R1, =0x2085A84 @IsMvsLMode
 	LDR     R1, [R1]
@@ -21,36 +22,42 @@ nsub_02009394:
 	BX      LR
 
 @Force Tileset 2 to be loaded if MvsLMode is not DLP
+ncp_call(0x020B39C8, 0)
 repl_020B39C8:
 	LDR     R0, =0x2085A84 @MvsLMode
 	LDR     R0, [R0]
 	CMP     R0, #2
 	BLEQ    0x20B39FC
 	BX      LR
+ncp_call(0x020B3A80, 0)
 repl_020B3A80:
 	LDR     R0, =0x2085A84 @MvsLMode
 	LDR     R0, [R0]
 	CMP     R0, #2
 	BLEQ    0x20B3A9C
 	BX      LR
+ncp_call(0x020AE018, 0)
 repl_020AE018:
 	LDR     R0, =0x2085A84 @MvsLMode
 	LDR     R0, [R0]
 	CMP     R0, #2
 	BLEQ    0x20AE058
 	BX      LR
+ncp_call(0x020AE070, 0)
 repl_020AE070:
 	LDR     R0, =0x2085A84 @MvsLMode
 	LDR     R0, [R0]
 	CMP     R0, #2
 	BLEQ    0x20AE0A4
 	BX      LR
+ncp_call(0x020AE184, 0)
 repl_020AE184:
 	LDR     R0, =0x2085A84 @MvsLMode
 	LDR     R0, [R0]
 	CMP     R0, #2
 	BLEQ    0x20AE1A0
 	BX      LR
+ncp_call(0x020AE1B8, 0)
 repl_020AE1B8: @I have no idea what this is?
 	LDR     R0, =0x2085A84 @MvsLMode
 	LDR     R0, [R0]
@@ -58,6 +65,7 @@ repl_020AE1B8: @I have no idea what this is?
 	BLEQ    0x20AE24C
 	BX      LR
         
+ncp_call(0x020AF9EC, 0)
 repl_020AF9EC:
 	LDR     R0, =0x2085A84 @MvsLMode
 	LDR     R0, [R0]
@@ -67,6 +75,7 @@ repl_020AF9EC:
 	BX      LR
 
 @Free something. This is probably good.
+ncp_call(0x020B3C4C, 0)
 repl_020B3C4C:
 	LDR     R0, =0x2085A84 @MvsLMode
 	LDR     R0, [R0]
@@ -75,6 +84,7 @@ repl_020B3C4C:
 	BX      LR
 
 @Disable spawning of initial VS Battle Star if spriteset 16 value is not 9.
+ncp_call(0x0209C4E0, 0)
 nsub_0209C4E0_ov_00:
 	LDR     R5, =0x208B000
 	LDR     R5, [R5,#0x19C]
@@ -85,6 +95,7 @@ nsub_0209C4E0_ov_00:
 	B       0x209C4E4
 
 @Force all player animations to be loaded (plnovs) if not DLP
+ncp_jump(0x02020728)
 nsub_02020728:
 	CMP     R0, #2
 	BEQ     0x2020748 @If DLP jump through code that loads singleplayer animations.
@@ -96,10 +107,15 @@ nsub_02020728:
 @ Otherwise bye bye free RAM.
 
 @Delete the hardcoded load overlay calls if not DLP.
+ncp_call(0x021535BC, 52)
 repl_021535BC_ov_34:
+ncp_call(0x021535C4, 52)
 repl_021535C4_ov_34:
+ncp_call(0x021535CC, 52)
 repl_021535CC_ov_34:
+ncp_call(0x021535D4, 52)
 repl_021535D4_ov_34:
+ncp_call(0x021535DC, 52)
 repl_021535DC_ov_34:
 	STMFD   SP!, {LR}
 	LDR     R1, =0x2085A84 @MvsLMode
@@ -109,6 +125,7 @@ repl_021535DC_ov_34:
 	LDMFD   SP!, {PC}
 
 @Delete ov53:createOv53Heap() call if not DLP.
+ncp_call(0x021535EC, 52)
 repl_021535EC_ov_34:
 	STMFD   SP!, {LR}
 	LDR     R0, =0x2085A84 @MvsLMode
@@ -118,10 +135,15 @@ repl_021535EC_ov_34:
 	LDMFD   SP!, {PC}
 
 @Delete the hardcoded unload overlay calls if not DLP.
+ncp_call(0x02152C34, 52)
 repl_02152C34_ov_34:
+ncp_call(0x02152C3C, 52)
 repl_02152C3C_ov_34:
+ncp_call(0x02152C44, 52)
 repl_02152C44_ov_34:
+ncp_call(0x02152C4C, 52)
 repl_02152C4C_ov_34:
+ncp_call(0x02152C54, 52)
 repl_02152C54_ov_34:
 	STMFD   SP!, {LR}
 	LDR     R1, =0x2085A84 @MvsLMode
@@ -131,6 +153,7 @@ repl_02152C54_ov_34:
 	LDMFD   SP!, {PC}
 
 @Delete ov53:destroyOv53Heap() call if not DLP.
+ncp_call(0x02152C2C, 52)
 repl_02152C2C_ov_34:
 	STMFD   SP!, {LR}
 	LDR     R0, =0x2085A84 @MvsLMode
@@ -141,7 +164,9 @@ repl_02152C2C_ov_34:
         
 @Patch ov53:getPtrToOv53Heap() calls if not DLP.
 @If result is 0, it will just use the default heap, which _should_ be fine.
+ncp_call(0x021535F0, 52)
 repl_021535F0_ov_34:
+ncp_call(0x02153600, 52)
 repl_02153600_ov_34:
 	STMFD   SP!, {LR}
 	LDR     R0, =0x2085A84 @MvsLMode
@@ -156,8 +181,11 @@ repl_02153600_ov_34:
 @Since we are not using some NARCs for 2Cards we should only load them in DLP mode.
 @Otherwise bye bye free RAM.
 
+ncp_call(0x02018B58)
 repl_02018B58: @LoadNarcForLevel
+ncp_call(0x021535FC, 52)
 repl_021535FC_ov_34: @Dat_2d.narc
+ncp_call(0x0215360C, 52)
 repl_0215360C_ov_34: @Dat_enemy.narc
 	STMFD   SP!, {LR}
 	LDR     R2, =0x2085A84 @MvsLMode
@@ -171,6 +199,7 @@ repl_0215360C_ov_34: @Dat_enemy.narc
 @Some animations are not loaded for Download Play so we replace those with loaded similars.
 
 @Fix slope slide animation for DLP
+ncp_call(0x0210F020, 10)
 repl_0210F020_ov_0A:
 	LDR     R1, =0x2085A84 @MvsLMode
 	LDR     R1, [R1]
@@ -180,6 +209,7 @@ repl_0210F020_ov_0A:
 	BX      LR
 	
 @Fix vine climbing animation for DLP
+ncp_call(0x0210D984, 10)
 repl_0210D984_ov_0A:
 	LDR     R1, =0x2085A84 @MvsLMode
 	LDR     R1, [R1]
@@ -189,6 +219,7 @@ repl_0210D984_ov_0A:
 	BX      LR
 
 @Fix vine started climbing animation for DLP
+ncp_call(0x0210D634, 10)
 repl_0210D634_ov_0A:
 	LDR     R1, =0x2085A84 @MvsLMode
 	LDR     R1, [R1]
@@ -198,6 +229,7 @@ repl_0210D634_ov_0A:
 	BX      LR
 
 @Fix vine standing animation for DLP
+ncp_call(0x0210D584, 10)
 repl_0210D584_ov_0A:
 	BNE     .IsIDLEinVine
 	BX      LR
@@ -210,6 +242,7 @@ repl_0210D584_ov_0A:
 	BX      LR
 
 @Fix fence up/down animation for DLP
+ncp_call(0x0210D978, 10)
 repl_0210D978_ov_0A:
 	BNE     .IsYMovingInFence
 	BX      LR
@@ -222,6 +255,7 @@ repl_0210D978_ov_0A:
 	BX      LR
 
 @Fix fence left/right animation for DLP
+ncp_call(0x0210D97C, 10)
 repl_0210D97C_ov_0A:
 	BEQ     .IsXMovingInFence
 	BX      LR
@@ -234,6 +268,7 @@ repl_0210D97C_ov_0A:
 	BX      LR
 
 @Fix fence standing animation for DLP
+ncp_call(0x0210D578, 10)
 repl_0210D578_ov_0A:
 	BEQ     .IsIdleInFence
 	BX      LR
@@ -246,6 +281,7 @@ repl_0210D578_ov_0A:
 	BX      LR
 
 @Fix fence hit animation for DLP
+ncp_call(0x0210D094, 10)
 repl_0210D094_ov_0A:
 	LDR     R1, =0x2085A84 @MvsLMode
 	LDR     R1, [R1]

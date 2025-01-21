@@ -6,8 +6,8 @@
 #include "nsmb/game/stage/player.hpp"
 #include "nsmb/core/system/function.hpp"
 
-constexpr u32 ModelFileID = 1567 - 131;
-constexpr u32 AnimFileID = 1566 - 131;
+constexpr u32 ModelFileID = 2089 - 131;
+constexpr u32 AnimFileID = 2090 - 131;
 
 static ActiveColliderInfo SpinDrift_colliderInfo =
 {
