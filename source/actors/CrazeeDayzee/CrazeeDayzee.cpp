@@ -1,4 +1,4 @@
-#include "SpinDrift.hpp"
+//#include "SpinDrift.hpp"
 
 #include "nsmb/game/sound.hpp"
 #include "nsmb/core/filesystem/cache.hpp"
@@ -6,8 +6,9 @@
 #include "nsmb/game/stage/player.hpp"
 #include "nsmb/core/system/function.hpp"
 
-constexpr u32 ModelFileID = 2089 - 131;
-constexpr u32 AnimFileID = 2090 - 131;
+/*
+constexpr u32 ModelFileID = 1567 - 131;
+constexpr u32 AnimFileID = 1566 - 131;
 
 static ActiveColliderInfo SpinDrift_colliderInfo =
 {
@@ -50,7 +51,7 @@ s32 SpinDrift::onCreate()
 
 	this->type = Type(settings.type);
 
-	scale = 0x1750;
+	scale = 0x1000;
 
 	this->initPos = this->position;
 
@@ -301,3 +302,4 @@ void SpinDrift::hitFromSide(StageActor& _self, StageActor& other)
 		}
 	}
 }
+*/

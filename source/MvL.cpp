@@ -18,22 +18,22 @@ void ReplaceMvLLevels()
 {
 	if (Input::getPressedKeys() & Keys::Select)
 	{
-		replaceLevels = !replaceLevels;	
+        replaceLevels = !replaceLevels;	
 		SND::playSFX(0x17B);
 	}
 
 	if (replaceLevels == true)
 	{
-		*mvlLevel1 = 1193 - 131;
-		*bgdat1 = 1194 - 131;
-		*mvlLevel2 = 1195 - 131;
-		*bgdat2 = 1196 - 131;
-		*mvlLevel3 = 1197 - 131;
-		*bgdat3 = 1198 - 131;
-		*mvlLevel4 = 1199 - 131;
-		*bgdat4 = 1200 - 131;
-		*mvlLevel5 = 1201 - 131;
-		*bgdat5 = 1202 - 131;
+		*mvlLevel1 = 0x7AF;
+		*bgdat1 = 0x7A6;
+		*mvlLevel2 = 0x7A7;
+		*bgdat2 = 0x7A8;
+		*mvlLevel3 = 0x7A9;
+		*bgdat3 = 0x7AA;
+		*mvlLevel4 = 0x7AB;
+		*bgdat4 = 0x7AC;
+		*mvlLevel5 = 0x7AD;
+		*bgdat5 = 0x7AE;
 	}
 
 	if (replaceLevels == false)

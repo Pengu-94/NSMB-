@@ -1,4 +1,4 @@
-// standard animations for Mario/Luigi.
+// some standard animations for Mario/Luigi.
 
 #define MIdle	0x00
 #define MWalkSlow	0x01
