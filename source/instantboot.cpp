@@ -8,9 +8,9 @@ static void replaceBootEnd() {
 	static constexpr u8 Area = 0;
 
 	Game::loadLevel(
-		SceneID::StageIntro,	// scene
+		SceneID::TitleScreen,	// scene
 		0,						// vs mode
-		Group, Stage, Area,		// group (world), stage, (sub) area
+		0, 0, 0,		// group (world), stage, (sub) area
 		0, 1,					// player ID, player mask
 		0, 0,					// character 1, character 2
 		1,						// powerup

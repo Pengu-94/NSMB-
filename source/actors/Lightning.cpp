@@ -4,9 +4,7 @@ ncp_over(0x020C619C, 0) const ObjectInfo objectInfo = Lightning::objectInfo; //S
 ncp_over(0x02039AEC) static constexpr const ActorProfile* profile = &Lightning::profile; //objectID 92
 
 bool Lightning::onPrepareResources(){
-    void* nsbtxFile;
-    nsbtxFile = FS::Cache::loadFile(2089 - 131, false);
-	lightningNsbtx.setup(nsbtxFile, Vec2(16, 16), Vec2(0, 0), 0, 0);
+	lightningNsbtx.setup(FS::Cache::getFile(2089 - 131), Vec2(16, 16), Vec2(0, 0), 0, 0);
     return 1;
 }
 
@@ -17,7 +15,6 @@ bool Lightning::loadResources() {
 // Code that runs the first time the Actor loads in
 s32 Lightning::onCreate() {
     onPrepareResources();
-	loadResources();
 
     activeSize = Vec2(1000.0, 1000.0);
 

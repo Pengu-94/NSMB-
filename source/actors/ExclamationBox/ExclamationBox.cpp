@@ -32,6 +32,7 @@ ActorProfile ExclamationBox::profile = {
 bool ExclamationBox::loadFiles()
 {
 	FS::Cache::loadFile(ModelFileID, false);
+    FS::Cache::loadFile(2089 - 131, false);
 	return true;
 }
 

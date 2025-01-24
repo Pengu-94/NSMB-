@@ -5,9 +5,11 @@
 #define repl_obj(objID, class)
 #define repl_stageObj(objID, stageObjID, class)
 
+#include "actors/Heaveho/Heaveho.hpp"
 #include "actors/ExclamationBox/ExclamationBox.hpp"
 #include "actors/Spindrift/SpinDrift.hpp"
 
+repl_stageObj(280, 255, Heaveho)
 repl_stageObj(253, 145, ExclamationBox)
 repl_stageObj(256, 171, SpinDrift)
 
